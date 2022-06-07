@@ -1,7 +1,5 @@
 package com.husen.jwt.entity;
 
-import java.sql.Date;
-
 
 import java.util.Set;
 
@@ -17,8 +15,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 import javax.persistence.Table;
-
-
+import javax.validation.constraints.NotEmpty;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
@@ -30,14 +27,22 @@ public class ProductDetails {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "p_id")
 	private int pid;
-	@Column
+	
+	@NotEmpty
+	@Column(name = "p_name")
 	private String pname;
-	@Column
+	
+	@NotEmpty
+	@Column(name = "p_price")
 	private int price;
-	@Column
+	
+	@NotEmpty
+	@Column(name = "p_quantity")
 	private int quantity;
-	@Column
-	private Date date;
+	
+	@NotEmpty
+	@Column(name = "date")
+	private String date;
 
 	@ManyToOne()
     @JoinColumn(name = "fk_cid")
@@ -50,7 +55,7 @@ public class ProductDetails {
 public ProductDetails() {
 }
 
-public ProductDetails(int pid, String pname, int price, int quantity, Date date, CategoryDetails category,
+public ProductDetails(int pid, String pname, int price, int quantity, String date, CategoryDetails category,
 		WarehouseDetails warehouse) {
 	super();
 	this.pid = pid;
@@ -94,11 +99,11 @@ public ProductDetails(int pid, String pname, int price, int quantity, Date date,
 		this.quantity = quantity;
 	}
 
-	public Date getDate() {
+	public String getString() {
 		return date;
 	}
 
-	public void setDate(Date date) {
+	public void setString(String date) {
 		this.date = date;
 	}
 	@JsonBackReference(value="category-product")

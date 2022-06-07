@@ -15,7 +15,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-
+import javax.validation.constraints.NotEmpty;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
@@ -28,10 +28,15 @@ public class WarehouseDetails {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "w_id")
 	private int wid;
-	@Column
+	
+	@NotEmpty
+	@Column(name = "w_name")
 	private String wname;
-	@Column
+	
+	@NotEmpty
+	@Column(name = "location")
 	private String location;
+	
 	 @OneToMany(mappedBy = "warehouse",cascade = CascadeType. ALL, fetch=FetchType.LAZY)
 	 private Set<ProductDetails> product;
 	
