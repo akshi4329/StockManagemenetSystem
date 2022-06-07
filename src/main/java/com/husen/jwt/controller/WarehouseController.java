@@ -26,7 +26,7 @@ public class WarehouseController {
 	@PostMapping("/newWarehouse")
 	@PreAuthorize("hasRole('Admin')")
 	public ResponseEntity<WarehouseDetails> addWarehouse(@RequestBody WarehouseDetails warehouse) {
-		return new ResponseEntity<WarehouseDetails>(wservice.saveproduct(warehouse), HttpStatus.CREATED);
+		return new ResponseEntity<WarehouseDetails>(wservice.savewarehouse(warehouse), HttpStatus.CREATED);
 	}
 
 	@GetMapping("/getAll")

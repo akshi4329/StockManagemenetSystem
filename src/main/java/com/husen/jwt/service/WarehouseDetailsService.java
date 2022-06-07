@@ -13,7 +13,7 @@ public class WarehouseDetailsService {
 	@Autowired
 	WarehouseDetailsRepository wrepo;
 
-	public WarehouseDetails saveproduct(WarehouseDetails warehouse) {
+	public WarehouseDetails savewarehouse(WarehouseDetails warehouse) {
 		return wrepo.save(warehouse);
 	}
 

@@ -14,7 +14,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-
+import javax.validation.constraints.NotEmpty;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
@@ -26,7 +26,9 @@ public class CategoryDetails {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "c_id")
 	private int cid;
-	@Column
+	
+	@Column(name = "c_name") 
+	@NotEmpty
 	private String cname;
 
 	
