@@ -1,0 +1,22 @@
+<div class="container col-md-6">
+    <h1 style="color: red;">Register User</h1>
+    <form (ngSubmit)="userRegister()">
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">userName</label>
+        <input type="text" class="form-control" id="userName" name="userName" [(ngModel)]="user.userName">
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">userFirstName</label>
+        <input type="text" class="form-control" id="userFirstName" name="userFirstName" [(ngModel)]="user.userFirstName">
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">userLastName</label>
+        <input type="text" class="form-control" id="userLastName" name="userLastName" [(ngModel)]="user.userLastName">
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">userPassword</label>
+        <input type="password" class="form-control" id="userPassword" name="userPassword" [(ngModel)]="user.userPassword">
+      </div>
+      <button type="submit" class="btn btn-primary" (click)="dosubmit()">Register</button>
+    </form>
+</div>
